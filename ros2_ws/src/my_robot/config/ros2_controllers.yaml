@@ -1,0 +1,31 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    diff_drive_controller:
+      type: diff_drive_controller/DiffDriveController
+
+diff_drive_controller:
+  ros__parameters:
+    left_wheel_names: ["left_wheel_joint"]
+    right_wheel_names: ["right_wheel_joint"]
+
+    wheel_separation: 0.35
+    wheel_radius: 0.08
+
+    use_stamped_vel: false
+
+    # 速度限制参数配置 (参考 README 要求)
+    linear.x.has_velocity_limits: true
+    linear.x.max_velocity: 1.0
+    angular.z.has_velocity_limits: true
+    angular.z.max_velocity: 2.0
+
+    cmd_vel_timeout: 0.5
+    publish_rate: 50.0
+    base_frame_id: base_footprint
+    odom_frame_id: odom
+    enable_odom_tf: true

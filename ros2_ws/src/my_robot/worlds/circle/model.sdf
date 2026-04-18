@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <model name="circular_wall_hollow">
+    <static>true</static>
+    
+    <!-- 用12块墙围成一圈，半径2米 -->
+    <!-- 每块墙的角度：360/12 = 30度 = 0.5236弧度 -->
+    
+    <!-- 墙块 1 -->
+    <link name="wall_1">
+      <pose>2.0 0 0.5 0 0 0</pose>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.2 1.0 1.0</size>  <!-- 厚0.2m，宽1m，高1m -->
+          </box>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry><box><size>0.2 1.0 1.0</size></box></geometry>
+      </collision>
+    </link>
+    
+    <!-- 墙块 2 (旋转30度) -->
+    <link name="wall_2">
+      <pose>1.732 1.0 0.5 0 0 0.5236</pose>  <!-- x=r*cos30, y=r*sin30 -->
+      <visual name="visual">
+        <geometry><box><size>0.2 1.0 1.0</size></box></geometry>
+      </visual>
+      <collision name="collision">
+        <geometry><box><size>0.2 1.0 1.0</size></box></geometry>
+      </collision>
+    </link>
+    
+    <!-- 继续添加 wall_3 到 wall_12... -->
+    
+  </model>
+</sdf>
