@@ -1,12 +1,3 @@
-"""
-sim.launch.py
-一键启动仿真环境：
-  1. Gazebo（加载自定义世界 + 机器人模型）
-  2. robot_state_publisher（发布 TF 树）
-  3. gazebo_ros2_control（加载控制器）
-  4. 自动激活 joint_state_broadcaster & diff_drive_controller
-"""
-
 import os
 from pathlib import Path
 

@@ -1,8 +1,3 @@
-"""
-display.launch.py
-启动可视化工具：rviz2 + rqt_graph + rqt_topic（用于实验展示与截图）
-"""
-
 import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
